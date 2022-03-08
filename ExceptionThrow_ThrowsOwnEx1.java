@@ -1,13 +1,13 @@
 package programs;
-class NegativeDimension extends Exception{
+class NegativeDimensionException extends Exception{
 	public String toString() {
 		return "Dimension should not be negative ";
 	}
 }
 public class ExceptionThrow_ThrowsOwnEx1 {
-	static int area(int l,int b) throws NegativeDimension{
+	static int area(int l,int b) throws NegativeDimensionException{
 		if(l<0 || b<0) {
-			throw new NegativeDimension();
+			throw new NegativeDimensionException();
 		}
 		int a=l*b;
 		return a;
@@ -17,7 +17,7 @@ public class ExceptionThrow_ThrowsOwnEx1 {
 		int r=area(-10,5);
 		System.out.println(r);
 		}
-		catch(NegativeDimension e) {
+		catch(NegativeDimensionException e) {
 			System.out.println(e);
 		}
 	}
